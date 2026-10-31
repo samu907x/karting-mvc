@@ -1,0 +1,111 @@
+/* ===== Variables de color (tema: asfalto y pianos de pista) ===== */
+:root {
+    --asfalto: #1d2127;
+    --asfalto-claro: #2b3037;
+    --piano-rojo: #d62828;
+    --piano-blanco: #f4f5f6;
+    --concreto: #e7e9ec;
+    --texto: #1d2127;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Barlow", system-ui, sans-serif;
+    background-color: var(--concreto);
+    color: var(--texto);
+}
+
+h1, h2, h3, .marca { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; }
+
+/* ===== Navbar ===== */
+.barra-principal {
+    background-color: var(--asfalto);
+    border-bottom: 3px solid var(--piano-rojo);
+}
+.marca { font-size: 1.6rem; font-weight: 700; font-style: italic; letter-spacing: 0.02em; }
+
+/* ===== Hero ===== */
+.hero {
+    min-height: 80vh;
+    background-color: var(--asfalto);
+    background-image: linear-gradient(135deg, var(--asfalto) 55%, var(--asfalto-claro) 100%);
+    color: var(--piano-blanco);
+}
+.hero-fecha {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.3rem;
+    color: var(--piano-rojo);
+    font-weight: 600;
+}
+.hero-titulo {
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 0.95;
+}
+.hero-texto {
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Franja roja y blanca, como los pianos de una pista */
+.franja-piano {
+    height: 22px;
+    background-image: repeating-linear-gradient(
+        90deg,
+        var(--piano-rojo) 0, var(--piano-rojo) 40px,
+        var(--piano-blanco) 40px, var(--piano-blanco) 80px
+    );
+}
+
+/* ===== Secciones ===== */
+.titulo-seccion {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    font-style: italic;
+}
+.fondo-oscuro { background-color: var(--asfalto); color: var(--piano-blanco); }
+.fondo-oscuro .card { color: var(--texto); }
+
+/* ===== Tarjetas ===== */
+.card { border-radius: 6px; }
+.tarjeta-dato { border: 0; border-left: 6px solid var(--piano-rojo); border-radius: 4px; }
+
+/* ===== Tabla de posiciones ===== */
+.tabla-posiciones { background-color: white; }
+.tabla-posiciones caption { color: #5b636d; }
+.tabla-posiciones thead th {
+    background-color: var(--asfalto);
+    color: var(--piano-blanco);
+    font-weight: 500;
+    border: 0;
+}
+.posicion {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+}
+.fila-lider .posicion { color: var(--piano-rojo); }
+.puntos {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ===== Botones y formularios ===== */
+.btn-outline-dark.active { background-color: var(--asfalto); color: var(--piano-blanco); }
+.form-control:focus, .form-select:focus, .form-check-input:focus {
+    border-color: var(--piano-rojo);
+    box-shadow: 0 0 0 0.2rem rgba(214, 40, 40, 0.25);
+}
+.form-check-input:checked { background-color: var(--piano-rojo); border-color: var(--piano-rojo); }
+
+/* ===== Pie de página ===== */
+.pie {
+    background-color: var(--asfalto);
+    color: #aeb4bc;
+    border-top: 3px solid var(--piano-rojo);
+}

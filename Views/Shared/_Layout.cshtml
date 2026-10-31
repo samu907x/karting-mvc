@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IUE Karting</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/karting.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Barra de navegación (componente Bootstrap) -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top barra-principal">
+        <div class="container">
+            <a class="navbar-brand marca" asp-controller="Home" asp-action="Index">IUE Karting</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Pilotos" asp-action="Index">Posiciones</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Pilotos" asp-action="Create">Inscripción</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Pilotos" asp-action="Resultado">Resultados</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mensaje de confirmación que envían los controladores con TempData -->
+    @if (TempData["Mensaje"] is string mensaje)
+    {
+        <div class="container mt-3">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @mensaje
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+            </div>
+        </div>
+    }
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="py-4 text-center pie">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Campeonato IUE de Karting. Creado por Samuel Ramírez Alcalde.</p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
