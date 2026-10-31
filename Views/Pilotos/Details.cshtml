@@ -1,0 +1,26 @@
+@model Piloto
+@{
+    ViewData["Title"] = Model.Nombre;
+}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card tarjeta-dato">
+                    <div class="card-body p-4">
+                        <h1 class="h2">@Model.Nombre</h1>
+                        <ul class="list-group list-group-flush my-3">
+                            <li class="list-group-item d-flex justify-content-between"><span>Categoría</span><strong>@Model.Categoria</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span>Edad</span><strong>@Model.Edad años</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span>Motor</span><strong>@Model.Motor</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span>Correo</span><strong>@Model.Correo</strong></li>
+                            <li class="list-group-item d-flex justify-content-between"><span>Puntos</span><strong>@Model.Puntos</strong></li>
+                        </ul>
+                        <a asp-action="Index" class="btn btn-dark">Volver a posiciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

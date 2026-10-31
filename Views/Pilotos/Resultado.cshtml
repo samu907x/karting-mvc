@@ -1,0 +1,48 @@
+@model ResultadoViewModel
+@{
+    ViewData["Title"] = "Registrar resultado";
+}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h1 class="h3 mb-2">Registrar resultado</h1>
+                        <p class="small text-secondary">Elige un piloto y su puesto en la carrera: los puntos se suman en el servidor con C#.</p>
+
+                        <form asp-action="Resultado" method="post">
+                            <div class="mb-3">
+                                <label asp-for="PilotoId" class="form-label">Piloto</label>
+                                <select asp-for="PilotoId" class="form-select">
+                                    @foreach (var p in Model.Pilotos)
+                                    {
+                                        <option value="@p.Id">@p.Nombre</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="PilotoId" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Puesto" class="form-label">Puesto en la carrera</label>
+                                <select asp-for="Puesto" class="form-select">
+                                    @for (int i = 0; i < Model.PuntosPorPuesto.Length; i++)
+                                    {
+                                        <option value="@(i + 1)">Puesto @(i + 1) (@Model.PuntosPorPuesto[i] puntos)</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="Puesto" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-dark">Sumar puntos</button>
+                            <a asp-action="Index" class="btn btn-outline-dark">Cancelar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

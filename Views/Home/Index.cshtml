@@ -1,0 +1,77 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<section class="hero d-flex align-items-center bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <p class="hero-fecha mb-2">Temporada 2026</p>
+                <h1 class="hero-titulo">Campeonato IUE de Karting</h1>
+                <p class="lead hero-texto mt-3">
+                    Siente la adrenalina pura del automovilismo de base. Los karts son el semillero de los
+                    grandes campeones de la velocidad mundial.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                    <a asp-controller="Pilotos" asp-action="Create" class="btn btn-danger btn-lg">Inscribirme</a>
+                    <a asp-controller="Pilotos" asp-action="Index" class="btn btn-outline-light btn-lg">Ver posiciones</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="franja-piano" aria-hidden="true"></div>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="titulo-seccion mb-4">Categorías y requisitos</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="card tarjeta-dato h-100">
+                    <div class="card-body">
+                        <h3 class="h4">Infantil</h3>
+                        <p class="mb-0">De 7 a 11 años.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card tarjeta-dato h-100">
+                    <div class="card-body">
+                        <h3 class="h4">Juvenil</h3>
+                        <p class="mb-0">De 12 a 15 años.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card tarjeta-dato h-100">
+                    <div class="card-body">
+                        <h3 class="h4">Pro / Libre</h3>
+                        <p class="mb-0">Desde los 16 años.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="h5 mt-5 mb-3">Implementos necesarios</h3>
+        <ul>
+            <li>Casco homologado con certificación vigente.</li>
+            <li>Mono de cordura o cuero resistente a la abrasión.</li>
+            <li>Guantes y calzado especiales para karting.</li>
+            <li>Protector de costillas obligatorio.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="py-5 fondo-oscuro">
+    <div class="container">
+        <h2 class="titulo-seccion mb-4">Multimedia</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/bZ62IoWA-2w?si=qjxo5xAd67uCACie"
+                            title="Video de una carrera de karting" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
