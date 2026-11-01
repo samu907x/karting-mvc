@@ -24,9 +24,7 @@ public class Piloto
 
     public int Puntos { get; set; }
 
-  
-    [Range(typeof(bool), "true", "true", ErrorMessage = "Debes aceptar el reglamento.")]
-    public bool AceptaReglamento { get; set; }
+     public bool AceptaReglamento { get; set; }
 
   
     public string Categoria => Edad switch
