@@ -2,8 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace KartingMvc.Models;
 
-// MODELO: representa un piloto del campeonato.
-// Las anotaciones ([Required], [Range], etc.) son las reglas de validación.
+
 public class Piloto
 {
     public int Id { get; set; }
@@ -25,11 +24,11 @@ public class Piloto
 
     public int Puntos { get; set; }
 
-    // El checkbox del formulario: solo se acepta si está marcado (true)
+  
     [Range(typeof(bool), "true", "true", ErrorMessage = "Debes aceptar el reglamento.")]
     public bool AceptaReglamento { get; set; }
 
-    // Propiedad calculada: la categoría depende de la edad (no se llena desde el formulario)
+  
     public string Categoria => Edad switch
     {
         >= 7 and <= 11 => "Infantil",
